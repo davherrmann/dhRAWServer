@@ -16,4 +16,4 @@ class ImageInfoXML(object):
         return util_xml.to_xml(extract_exifs(imageSourceFolder))
 
 cherrypy.config.update({'server.socket_host': '0.0.0.0'} )   
-cherrypy.quickstart(ImageInfoXML())
+cherrypy.quickstart(ImageInfoXML(), "/", "dhRAWServer.config")

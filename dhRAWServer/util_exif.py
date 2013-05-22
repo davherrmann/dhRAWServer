@@ -36,5 +36,5 @@ def extract_exifs_from_folder(path, tags=EXIF_TAGS_SHOWN):
     exifs = {}
     for image in glob.glob(os.path.join(path, "*.JPG")):
         exifs[image] = extract_exif_from_jpg(image, tags)
-        exifs[image]["path"] = image
+        exifs[image]["path"] = os.path.basename(image)
     return exifs
